@@ -8,8 +8,6 @@ from django.shortcuts import render, render_to_response, redirect
 from django.urls import reverse
 
 from Hello.models import Web
-
-
 def sayHello(request):
     s = 'Hello World!'
     current_time = datetime.datetime.now()

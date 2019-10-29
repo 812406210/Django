@@ -19,6 +19,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from Hello import viewStudent
+from Hello import redisViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^hello/', viewStudent.sayHello),    #路径映射
@@ -29,6 +30,11 @@ urlpatterns = [
     url(r'^deleteStudentByKey/(?P<id>\d+)', viewStudent.deleteStudentByKey),
     url(r'^updateStudentInfoByKey/(?P<id>\d+)', viewStudent.updateStudentInfoByKey),
     url(r'^handsWriteSql/$', viewStudent.handsWriteSql),
+
+
+    url(r'^redisIndex/$', redisViews.redisIndex),
+    url(r'^redisOrder/$', redisViews.redisOrder),
+
 
 ]
 
