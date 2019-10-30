@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.urls import path
 from Hello import viewStudent
 from Hello import redisViews
+from Hello import personViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^hello/', viewStudent.sayHello),    #路径映射
@@ -34,6 +35,10 @@ urlpatterns = [
 
     url(r'^redisIndex/$', redisViews.redisIndex),
     url(r'^redisOrder/$', redisViews.redisOrder),
+
+
+
+    url(r'^listPerson/$', personViews.listPerson),
 
 
 ]

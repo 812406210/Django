@@ -22,7 +22,12 @@ def showStudents(request):
 查询所有
 '''
 def showStudents(request):
-    list = Web.objects.all()#查询所有
+    try:
+        list = Web.objects.all()#查询所有
+    except Exception as e:
+        print("发生异常",e)
+    finally:
+        print("最终执行")
     return render_to_response('hello.html',{'students': list})
 
 
